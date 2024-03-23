@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2023-10-11
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Our [Mitigatiting Bias in Machine Translation](https://arxiv.org/abs/2305.14016) paper is accepted to **EMNLP 2023**!

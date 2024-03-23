@@ -10,9 +10,11 @@
 - title: Education
   type: time_table
   contents:
-    - title: M.S/Phd
+    - title: M.S/Ph.D
       institution: Seoul National University, Seoul, Korea
+      logo: snu_logo.png
       year: 2023 -
+      department: Electrical and Computer Engineering
       # description:
       #   - Description 1.
       #   - Description 2.
@@ -23,6 +25,8 @@
     - title: B.S
       institution: Seoul National University, Seoul, Korea
       year: 2018 - 2023
+      logo: snu_logo.png
+      department: Electrical and Computer Engineering
       # description:
       #   - Description 1.
       #   - Description 2.

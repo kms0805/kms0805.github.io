@@ -31,6 +31,7 @@
           {% if content.title %}
             <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.title }}</h6>
           {% endif %}
+          
           {% if content.department or content.institution %}
             <table class="table-cv ml-1 ml-md-4 institution">
               <tbody>
@@ -50,6 +51,7 @@
                     <td class="department">{{ content.department }}</td>
                   </tr>
                 {% endif %}
+                
               </tbody>
             </table>
           {% endif %}
