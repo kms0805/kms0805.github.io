@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: left
-  image: winter_pro.jpg
+  image: winter_pro.png
   image_circular: false # crops the image to make it circular
   more_info: 
 
