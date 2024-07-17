@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our [MVMR🎥] paper is accepted to **CIKM 2024**!
+Our [MVMR🎥](https://kms0805.github.io/) paper is accepted to **CIKM 2024**!
