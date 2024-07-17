@@ -1,5 +1,16 @@
 ---
 ---
+@article{lee2024VlindBenchML,
+      title={VLind-Bench: Measuring Language Priors in Large Vision-Language Models}, 
+      author={Lee, Kang-il and Kim, Minbeom and Yoon, Seunghyun and Kim, Minsung and Lee, Dongryeol and Koh, Hyukhun and Jung, Kyomin},
+      year={2024},
+      abstract={Large Vision-Language Models (LVLMs) have demonstrated outstanding performance across various multimodal tasks. However, they suffer from a problem known as language prior, where responses are generated based solely on textual patterns while disregarding image information. Addressing the issue of language prior is crucial, as it can lead to undesirable biases or hallucinations when dealing with images that are out of training distribution. Despite its importance, current methods for accurately measuring language priors in LVLMs are poorly studied. Although existing benchmarks based on counterfactual or out-of-distribution images can partially be used to measure language priors, they fail to disentangle language priors from other confounding factors. To this end, we propose a new benchmark called VLind-Bench, which is the first benchmark specifically designed to measure the language priors, or blindness, of LVLMs. It not only includes tests on counterfactual images to assess language priors but also involves a series of tests to evaluate more basic capabilities such as instance comprehension, visual perception, and commonsense biases. For each instance in our benchmark, we ensure that all these basic tests are passed before evaluating the language priors, thereby minimizing the influence of other factors on the assessment. The evaluation and analysis of recent LVLMs in our benchmark reveal that almost all models exhibit a significant reliance on language priors. For each instance in our benchmark, we ensure that all these basic tests are passed before evaluating the language prior, thereby minimizing the influence of other factors on the assessment. The evaluation and analysis of recent LVLMs in our benchmark reveal that almost all models exhibit a significant reliance on language priors.},
+      journal={arXiv prerprint},
+      code={https://github.com/klee972/VLind-Bench},
+      pdf={https://arxiv.org/pdf/2406.08702},
+      dataset={https://huggingface.co/datasets/klee972/VLind-Bench},
+      preview={VLind.png}
+}
 @article{lee-etal-2024-Fine,
     title = "Fine-grained Gender Control in Machine Translation with Large Language Models",
     author = "Lee, Minwoo  and
@@ -16,11 +27,11 @@
 
 
 @article{Yang2023is,
-    title = {Is it Really Negative? Evaluating Natural Language Video Localization  Performance on Multiple Reliable Videos Pool},
+    title = {MVMR: A New Framework for Evaluating Faithfulness of Video Moment Retrieval against Multiple Distractors},
     author = {Nakyeong Yang and Minsung Kim and Seunghyun Yoon and Joongbo Shin and Kyomin Jung},
-    journal = "arxiv preprint",
-    month = jul,
-    year = "2023",
+    journal = "CIKM 2024",
+    month = oct,
+    year = "2024",
     selected={true},
     preview=mvmr.png
 }
