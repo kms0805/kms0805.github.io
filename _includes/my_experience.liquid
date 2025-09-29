@@ -25,22 +25,18 @@
                       alt=content.logo
                     %}
                   </div>
-              </div>
             {% endif %}
+          </div>
             <!-- Details Column -->
             <div class="col-8">
-              <br>
-
-              </br>
+            <br />
               {% if content.title %}
                 <div class="title font-weight-bold ml-1 ml-md-4">
                   {{ content.title }}
                 </div>
               {% endif %}
               {% if content.url %}
-                <div class="url">
-                  <a href="{{ content.url }}" target="_blank" class="btncv z-depth-0">DOC</a>
-                </div>
+                <div class="url"><a href="{{ content.url }}" target="_blank" class="btncv z-depth-0">DOC</a></div>
               {% endif %}
               {% if content.department or content.institution %}
                 <div class="ml-1 ml-md-4">
@@ -52,8 +48,8 @@
                   {% endif %}
                   {% if content.Host %}
                     <div class="Host">
-                      {{ content.Host }}
-                      <a href="{{ content.Host.url }}" target="_blank" class="btncv z-depth-0">DOC</a>
+                      {{ content.Host.name }}
+                      {% if content.Host.url %}<a href="{{ content.Host.url }}" target="_blank" class="btncv z-depth-0">DOC</a>{% endif %}
                     </div>
                   {% endif %}
                 </div>

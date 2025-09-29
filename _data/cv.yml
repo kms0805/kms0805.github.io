@@ -39,10 +39,10 @@
       url: https://www.mpi-sp.org/
       year: 2024
       logo: mpi-sp.png
-      Host: Meeyoun Cha
-        - url: https://scholar.google.com/citations?user=iFlnVCoAAAAJ&hl=ko
-      maindescription:
-        - 2024 Oct - 2024 Dec
+      Host:
+        name: Meeyoun Cha
+        url: https://scholar.google.com/citations?user=iFlnVCoAAAAJ&hl=ko
+      maindescription: 2024 Oct - 2024 Dec
     # - title: Visiting Professor
     #   institution: California Institute of Technology, Pasadena, California, US
     #   year: 1933
