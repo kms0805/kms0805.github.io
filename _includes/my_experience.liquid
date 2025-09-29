@@ -37,6 +37,11 @@
                   {{ content.title }}
                 </div>
               {% endif %}
+              {% if content.url %}
+                <div class="url">
+                  <a href="{{ content.url }}" target="_blank" class="btncv z-depth-0">DOC</a>
+                </div>
+              {% endif %}
               {% if content.department or content.institution %}
                 <div class="ml-1 ml-md-4">
                   {% if content.institution %}
@@ -48,7 +53,7 @@
                   {% if content.Host %}
                     <div class="Host">
                       {{ content.Host }}
-                      <a href="{{ content.url }}" target="_blank" class="btncv z-depth-0">DOC</a>
+                      <a href="{{ content.Host.url }}" target="_blank" class="btncv z-depth-0">DOC</a>
                     </div>
                   {% endif %}
                 </div>
