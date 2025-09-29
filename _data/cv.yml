@@ -31,25 +31,23 @@
       #   - Description 1.
       #   - Description 2.
 
-# - title: Experience
-#   type: time_table
-#   contents:
-#     - title: Professor of Theoretical Physics
-#       institution: Institute for Advanced Study, Princeton University
-#       year: 1933 - 1955
-#       description:
-#         - Description 1.
-#         - Description 2.
-#         - title: Description 3.
-#           contents:
-#             - Sub-description 1.
-#             - Sub-description 2.
-#     - title: Visiting Professor
-#       institution: California Institute of Technology, Pasadena, California, US
-#       year: 1933
-#       description:
-#         - Description 1.
-#         - Description 2.
+- title: Experience
+  type: time_table
+  contents:
+    - title: Research Intern
+      institution: Max Planck Institute for Security and Privacy
+      year: 2024
+      logo: mpi-sp.png
+      Host: Meeyoun Cha
+        - url: https://scholar.google.com/citations?user=iFlnVCoAAAAJ&hl=ko
+      maindescription:
+        - 2024 Oct - 2024 Dec
+    # - title: Visiting Professor
+    #   institution: California Institute of Technology, Pasadena, California, US
+    #   year: 1933
+    #   description:
+    #     - Description 1.
+    #     - Description 2.
 
 #     - title: Director
 #       institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
