@@ -32,11 +32,8 @@
             <br />
               {% if content.title %}
                 <div class="title font-weight-bold ml-1 ml-md-4">
-                  {{ content.title }}
+                  {% if content.url %}<a href="{{ content.url }}" target="_blank">{{ content.title }}</a>{% else %}{{ content.title }}{% endif %}
                 </div>
-              {% endif %}
-              {% if content.url %}
-                <div class="url"><a href="{{ content.url }}" target="_blank" class="btncv z-depth-0">DOC</a></div>
               {% endif %}
               {% if content.department or content.institution %}
                 <div class="ml-1 ml-md-4">
@@ -48,8 +45,7 @@
                   {% endif %}
                   {% if content.Host %}
                     <div class="Host">
-                      {{ content.Host.name }}
-                      {% if content.Host.url %}<a href="{{ content.Host.url }}" target="_blank" class="btncv z-depth-0">DOC</a>{% endif %}
+                      {% if content.Host.url %}Host: <a href="{{ content.Host.url }}" target="_blank">{{ content.Host.name }}</a>{% else %}Host: {{ content.Host.name }}{% endif %}
                     </div>
                   {% endif %}
                 </div>

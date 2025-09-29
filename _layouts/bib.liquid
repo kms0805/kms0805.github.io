@@ -4,15 +4,17 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
       {% if entry.preview %}
+        {% assign thumb_width = site.publication_thumbnail_size | default: 160 | append: 'px' %}
         {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
+          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}" style="width: {{ thumb_width }}; height: auto;">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
           {%
             include figure.liquid
             loading="eager"
             path=entry_path
-            sizes = "500px"
+            width=thumb_width
+            sizes = thumb_width
             class="preview z-depth-1 rounded"
             zoomable=false
             alt=entry.preview
