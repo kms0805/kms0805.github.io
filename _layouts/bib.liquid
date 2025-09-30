@@ -2,7 +2,7 @@
 ---
 <div class="row">
   {% if site.enable_publication_thumbnails %}
-    <div class="col-sm-5 {% if entry.preview %}preview{% else %}abbr{% endif %}">
+    <div class="col-sm-10 {% if entry.preview %}preview{% else %}abbr{% endif %}">
       {% if entry.preview %}
         {% assign thumb_width = site.publication_thumbnail_size | default: 360 | append: 'px' %}
         {% if entry.preview contains '://' %}
