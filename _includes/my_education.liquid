@@ -13,20 +13,20 @@
                 </span>
               {% endif %}
               {% if content.logo %}
-                  <div class="logo" style="width: 100px">
-                    {% assign entry_path = content.logo | prepend: '/assets/img/logo/' %}
-                    {%
-                      include figure.liquid
-                      loading="eager"
-                      path=entry_path
-                      sizes = "50px"
-                      class="preview z-depth-1 rounded"
-                      zoomable=false
-                      alt=content.logo
-                    %}
-                  </div>
-              </div>
-            {% endif %}
+                <div class="logo" style="width: 100px">
+                  {% assign entry_path = content.logo | prepend: '/assets/img/logo/' %}
+                  {%
+                    include figure.liquid
+                    loading="eager"
+                    path=entry_path
+                    sizes = "50px"
+                    class="preview z-depth-1 rounded"
+                    zoomable=false
+                    alt=content.logo
+                  %}
+                </div>
+              {% endif %}
+            </div>
             <!-- Details Column -->
             <div class="col-8">
               {% if content.title %}
