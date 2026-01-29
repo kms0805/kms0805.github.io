@@ -383,6 +383,16 @@ ul.task-list input[type="checkbox"] {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+
+  .post-title {
+    background: linear-gradient(135deg, var(--global-theme-color) 0%, #667eea 50%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+  }
 }
 
 .social-inline {
@@ -405,6 +415,85 @@ ul.task-list input[type="checkbox"] {
           color: var(--global-theme-color);
         }
       }
+    }
+  }
+}
+
+// Education & Experience Cards
+
+.cv-section {
+  .education-entry,
+  .experience-entry {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--global-theme-color) 0%, #667eea 50%, #764ba2 100%);
+      border-radius: 3px;
+    }
+  }
+
+  .education-content,
+  .experience-content {
+    background: var(--global-card-bg-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--global-divider-color);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .badge-logo {
+      .badge {
+        background: linear-gradient(135deg, var(--global-theme-color), #667eea) !important;
+        color: white;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+      }
+
+      .logo {
+        margin-top: 0.5rem;
+
+        img {
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .title {
+      font-size: 1.1rem;
+      color: var(--global-text-color);
+    }
+
+    .institution,
+    .department {
+      font-size: 0.95rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.25rem;
+
+      i {
+        color: var(--global-theme-color);
+        margin-right: 0.5rem;
+      }
+    }
+
+    .maindescription {
+      font-size: 0.9rem;
+      color: var(--global-text-color-light);
+      margin-top: 0.5rem;
+      margin-bottom: 0;
     }
   }
 }
