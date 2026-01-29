@@ -376,6 +376,39 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Social (inline with name)
+
+.header-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-inline {
+  display: inline-flex;
+  align-items: center;
+
+  .contact-icons {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+
+    a {
+      i::before {
+        color: var(--global-text-color);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        i::before {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+  }
+}
+
 // Social (bottom)
 
 .social {
