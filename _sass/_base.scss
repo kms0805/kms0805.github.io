@@ -385,7 +385,7 @@ ul.task-list input[type="checkbox"] {
   gap: 1rem;
 
   .post-title {
-    background: linear-gradient(135deg, var(--global-theme-color) 0%, #667eea 50%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a8cba 0%, var(--global-theme-color) 50%, #4db8d9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -434,7 +434,7 @@ ul.task-list input[type="checkbox"] {
       top: 0;
       bottom: 0;
       width: 3px;
-      background: linear-gradient(180deg, var(--global-theme-color) 0%, #667eea 50%, #764ba2 100%);
+      background: linear-gradient(180deg, #1a8cba 0%, var(--global-theme-color) 50%, #4db8d9 100%);
       border-radius: 3px;
     }
   }
@@ -456,11 +456,11 @@ ul.task-list input[type="checkbox"] {
 
     .badge-logo {
       .badge {
-        background: linear-gradient(135deg, var(--global-theme-color), #667eea) !important;
+        background: linear-gradient(135deg, #1a8cba, var(--global-theme-color)) !important;
         color: white;
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
-        border-radius: 20px;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 15px;
       }
 
       .logo {
