@@ -40,7 +40,6 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
-       
       </div>
     {% endif %}
 
@@ -54,21 +53,17 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
-
-    <!-- Education -->    <!-- Education -->
+    <!-- Education -->
     <h2 style="color: inherit">
-      <a href="{{ '/cv/' | relative_url }}"style="color: inherit">Education</a>
-    </h2> 
+      <a href="{{ '/cv/' | relative_url }}" style="color: inherit">Education</a>
+    </h2>
     {% include my_education.liquid %}
 
     <!-- Experience -->
     <h2 style="color: inherit">
-          <a href="{{ '/cv/' | relative_url }}"style="color: inherit">Experience</a>
-    </h2> 
+      <a href="{{ '/cv/' | relative_url }}" style="color: inherit">Experience</a>
+    </h2>
     {% include my_experience.liquid %}
-
-
-
 
     <!-- Latest posts -->
     {% comment %}
@@ -87,10 +82,5 @@ layout: default
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
-
-
-
-
-
   </article>
 </div>
