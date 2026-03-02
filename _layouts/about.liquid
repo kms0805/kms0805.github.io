@@ -3,84 +3,149 @@ layout: default
 ---
 <div class="post">
   <header class="post-header">
-    <div class="header-row">
-      <h1 class="post-title">
-        {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-          {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </h1>
-      {% if page.social %}
-        <div class="social-inline">
-          <div class="contact-icons">{% include social.liquid %}</div>
+    <!-- Hero: Name + Profile side by side -->
+    <div class="about-hero">
+      {% if page.profile %}
+        <div class="about-hero__photo">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% assign profile_image_class = 'img-fluid about-avatar' %}
+            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+            <div class="coin coin--entry">
+              <div class="coin__front">
+                {%
+                  include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                  cache_bust=true
+                %}
+              </div>
+              <div class="coin__back">
+                <img src="{{ '/assets/img/logo/mil_logo.png' | relative_url }}" alt="MIL" class="coin__back-logo">
+              </div>
+            </div>
+          {% endif %}
         </div>
       {% endif %}
+      <div class="about-hero__info">
+        <h1 class="about-name">
+          {% if site.title == 'blank' %}
+            <span class="first-name">{{ site.first_name }}</span> {{ site.middle_name }}
+            {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        {% if page.social %}
+          <div class="about-social">
+            <div class="contact-icons">{% include social.liquid %}</div>
+          </div>
+        {% endif %}
+        <p class="desc">{{ page.subtitle }}</p>
+      </div>
     </div>
-    <p class="desc">{{ page.subtitle }}</p>
   </header>
 
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+    <!-- Bio -->
+    <div class="about-bio reveal">
+      {{ content }}
+    </div>
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="section-wave"></div>
 
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-      </h2>
-      {% include news.liquid limit=true %}
+      <section class="about-section reveal">
+        <h2 class="section-heading">
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      </section>
+      <div class="section-wave"></div>
     {% endif %}
 
     <!-- Education -->
-    <h2 style="color: inherit">
-      <a href="{{ '/cv/' | relative_url }}" style="color: inherit">Education</a>
-    </h2>
-    {% include my_education.liquid %}
+    <section class="about-section reveal">
+      <h2 class="section-heading">
+        <a href="{{ '/cv/' | relative_url }}" style="color: inherit">Education</a>
+      </h2>
+      {% include my_education.liquid %}
+    </section>
+
+    <div class="section-wave"></div>
 
     <!-- Experience -->
-    <h2 style="color: inherit">
-      <a href="{{ '/cv/' | relative_url }}" style="color: inherit">Experience</a>
-    </h2>
-    {% include my_experience.liquid %}
-
-    <!-- Latest posts -->
-    {% comment %}
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+    <section class="about-section reveal">
+      <h2 class="section-heading">
+        <a href="{{ '/cv/' | relative_url }}" style="color: inherit">Experience</a>
       </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-    {% endcomment %}
+      {% include my_experience.liquid %}
+    </section>
+
+    <div class="section-wave"></div>
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <section class="about-section reveal">
+        <h2 class="section-heading">
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
+        </h2>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
   </article>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Coin flip — lock interactions while spinning
+  var coin = document.querySelector(".coin");
+  if (coin) {
+    coin.addEventListener("animationend", function () {
+      coin.classList.remove("coin--entry", "coin--spinning");
+    });
+    coin.addEventListener("mouseenter", function () {
+      if (!coin.classList.contains("coin--entry") && !coin.classList.contains("coin--spinning")) {
+        coin.classList.add("coin--spinning");
+      }
+    });
+  }
+
+  var reveals = document.querySelectorAll(".reveal");
+  if (!reveals.length) return;
+
+  // Mark all as ready (adds opacity:0 + transform)
+  reveals.forEach(function (el) { el.classList.add("reveal-ready"); });
+
+  // Stagger reveal for elements already in viewport
+  var delay = 0;
+  reveals.forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 50) {
+      el.style.transitionDelay = delay * 0.1 + "s";
+      delay++;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { el.classList.add("visible"); });
+      });
+    }
+  });
+
+  // Observe off-screen elements
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  reveals.forEach(function (el) {
+    if (!el.classList.contains("visible")) {
+      observer.observe(el);
+    }
+  });
+});
+</script>

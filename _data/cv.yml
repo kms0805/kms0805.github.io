@@ -12,21 +12,16 @@
   contents:
     - title: M.S/Ph.D
       institution: Seoul National University, Seoul, Korea
+      url: https://ee.snu.ac.kr/en
       logo: snu_logo.png
-      year: 2023 -
       department: Electrical and Computer Engineering
-      # description:
-      #   - Description 1.
-      #   - Description 2.
-      #   - title: Description 3.
-      #     contents:
-      #       - Sub-description 1.
-      #       - Sub-description 2.
+      maindescription: 2023 Mar - Present
     - title: B.S
       institution: Seoul National University, Seoul, Korea
-      year: 2018 - 2023
+      url: https://ee.snu.ac.kr/en
       logo: snu_logo.png
       department: Electrical and Computer Engineering
+      maindescription: 2018 Mar - 2023 Feb
       # description:
       #   - Description 1.
       #   - Description 2.
@@ -37,7 +32,6 @@
     - title: Research Intern
       institution: Max Planck Institute for Security and Privacy
       url: https://www.mpi-sp.org/
-      year: 2024
       logo: mpi-sp.png
       Host:
         name: Meeyoun Cha
