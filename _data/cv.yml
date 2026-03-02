@@ -90,8 +90,8 @@
 - title: Hobby
   type: time_table
   contents:
-    - title: study
+    - title: American Football
+      institution: SNU College Team
       year: 2019 - 2024
-      items: study
-          # description:
-          #   - Description 1.
+      description:
+        - Quarterback

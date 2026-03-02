@@ -772,19 +772,40 @@ footer.sticky-bottom {
   margin-bottom: 40px;
 
   .card {
-    background-color: var(--global-card-bg-color);
+    background-color: var(--global-bg-color);
     border: 1px solid var(--global-divider-color);
+
+    .card-title {
+      color: var(--global-text-color);
+    }
 
     .list-group-item {
       background-color: inherit;
       border-color: var(--global-divider-color);
+      color: var(--global-text-color);
 
       .badge {
-        color: var(--global-card-bg-color) !important;
+        color: #fff !important;
         background-color: var(--global-theme-color) !important;
+      }
+
+      h6.title {
+        color: var(--global-text-color);
+      }
+
+      .institution,
+      .department,
+      .items,
+      .item,
+      .subitem {
+        color: var(--global-text-color);
       }
     }
   }
+}
+
+.table-cv {
+  color: var(--global-text-color);
 }
 
 .table-cv-map {
