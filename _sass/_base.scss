@@ -1478,8 +1478,8 @@ swiper-container {
 // ─── Coin flip (profile avatar) ──────────────────────────────────────────────
 
 .coin {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   position: relative;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -1520,8 +1520,8 @@ swiper-container {
   }
 
   .about-avatar {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
     border: 2.5px solid var(--global-divider-color);
