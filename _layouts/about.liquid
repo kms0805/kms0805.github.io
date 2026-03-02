@@ -107,8 +107,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function onImgReady() {
       loaded++;
       if (loaded >= total) {
+        // Remove loading state so browser paints both faces
         coin.classList.remove("coin--loading");
-        coin.classList.add("coin--entry");
+        // Wait two frames for the browser to render/composite both faces
+        // before starting the spin animation
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            coin.classList.add("coin--entry");
+          });
+        });
       }
     }
 
