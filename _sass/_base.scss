@@ -1505,9 +1505,14 @@ swiper-container {
   transform-style: preserve-3d;
   cursor: pointer;
 
-  // Entry animation — 3 spins on page load
+  // Hidden until images are loaded
+  &--loading {
+    opacity: 0;
+  }
+
+  // Entry animation — fade in + 3 spins after images load
   &--entry {
-    animation: coin-entry 1.8s ease-in-out 0.2s both;
+    animation: coin-entry 1.8s ease-in-out both;
   }
 
   // Spin triggered by JS (locked until animation finishes)
@@ -1569,12 +1574,17 @@ swiper-container {
   pointer-events: none;
 }
 
-// Entry: 3 clean spins, no scale
+// Entry: fade in + 3 clean spins
 @keyframes coin-entry {
   0% {
+    opacity: 0;
     transform: rotateY(0deg);
   }
+  10% {
+    opacity: 1;
+  }
   100% {
+    opacity: 1;
     transform: rotateY(1080deg);
   }
 }

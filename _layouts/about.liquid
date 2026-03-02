@@ -11,7 +11,7 @@ layout: default
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% assign profile_image_class = 'img-fluid about-avatar' %}
             {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            <div class="coin coin--entry">
+            <div class="coin coin--loading">
               <div class="coin__front">
                 {%
                   include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
@@ -97,9 +97,30 @@ layout: default
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // Coin flip — lock interactions while spinning
+  // Coin flip — wait for images, then animate
   var coin = document.querySelector(".coin");
   if (coin) {
+    var imgs = coin.querySelectorAll("img");
+    var loaded = 0;
+    var total = imgs.length;
+
+    function onImgReady() {
+      loaded++;
+      if (loaded >= total) {
+        coin.classList.remove("coin--loading");
+        coin.classList.add("coin--entry");
+      }
+    }
+
+    imgs.forEach(function (img) {
+      if (img.complete) {
+        onImgReady();
+      } else {
+        img.addEventListener("load", onImgReady);
+        img.addEventListener("error", onImgReady);
+      }
+    });
+
     coin.addEventListener("animationend", function () {
       coin.classList.remove("coin--entry", "coin--spinning");
     });
