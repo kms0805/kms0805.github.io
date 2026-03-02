@@ -91,7 +91,5 @@
   type: time_table
   contents:
     - title: American Football
-      institution: SNU College Team
-      year: 2019 - 2024
-      description:
-        - Quarterback
+      institution: SNU College Team — Quarterback
+      maindescription: 2019 - 2024
