@@ -1504,6 +1504,7 @@ swiper-container {
   position: relative;
   transform-style: preserve-3d;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 
   // Hidden until images are loaded
   &--loading {
