@@ -99,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var coin = document.querySelector(".coin");
   if (coin) {
     var frontImg = coin.querySelector(".coin__front img");
+    var backDiv = coin.querySelector(".coin__back");
+    var backSrc = backDiv ? backDiv.style.backgroundImage.replace(/url\(['"]?|['"]?\)/g, "") : "";
 
     function startCoin() {
       coin.classList.remove("coin--loading");
@@ -109,15 +111,36 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    if (frontImg && frontImg.complete) {
-      frontImg.decode ? frontImg.decode().then(startCoin).catch(startCoin) : startCoin();
-    } else if (frontImg) {
-      frontImg.addEventListener("load", function () {
-        frontImg.decode ? frontImg.decode().then(startCoin).catch(startCoin) : startCoin();
-      });
-      frontImg.addEventListener("error", startCoin);
-    } else {
-      startCoin();
+    // Wait for both front img and back background-image to load
+    var ready = 0;
+    var needed = (frontImg ? 1 : 0) + (backSrc ? 1 : 0);
+    if (!needed) { startCoin(); }
+
+    function onReady() {
+      ready++;
+      if (ready >= needed) startCoin();
+    }
+
+    // Front: wait for decode
+    if (frontImg) {
+      if (frontImg.complete) {
+        frontImg.decode ? frontImg.decode().then(onReady).catch(onReady) : onReady();
+      } else {
+        frontImg.addEventListener("load", function () {
+          frontImg.decode ? frontImg.decode().then(onReady).catch(onReady) : onReady();
+        });
+        frontImg.addEventListener("error", onReady);
+      }
+    }
+
+    // Back: preload background-image via hidden Image
+    if (backSrc) {
+      var backImg = new Image();
+      backImg.onload = function () {
+        backImg.decode ? backImg.decode().then(onReady).catch(onReady) : onReady();
+      };
+      backImg.onerror = onReady;
+      backImg.src = backSrc;
     }
 
     coin.addEventListener("animationend", function () {

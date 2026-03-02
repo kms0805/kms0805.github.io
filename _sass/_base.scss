@@ -1532,6 +1532,7 @@ swiper-container {
 
 // Front face — profile photo
 .coin__front {
+  transform: translateZ(1px);
   overflow: hidden;
 
   figure {
@@ -1558,7 +1559,7 @@ swiper-container {
 
 // Back face — logo via CSS background (preloaded with the stylesheet)
 .coin__back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(1px);
   background: #ffffff no-repeat center / 70%;
   border: 2.5px solid var(--global-divider-color);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
