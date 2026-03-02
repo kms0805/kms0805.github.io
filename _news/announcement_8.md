@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🇰🇷 Started serving as **Technical Research Personnel** for mandatory military service.
+Started serving as 🇰🇷 **Technical Research Personnel** for mandatory military service.
