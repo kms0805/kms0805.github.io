@@ -18,9 +18,7 @@ layout: default
                   cache_bust=true
                 %}
               </div>
-              <div class="coin__back">
-                <img src="{{ '/assets/img/logo/mil_logo.png' | relative_url }}" alt="MIL" class="coin__back-logo">
-              </div>
+              <div class="coin__back" style="background-image: url('{{ '/assets/img/logo/mil_logo.png' | relative_url }}')"></div>
             </div>
           {% endif %}
         </div>
@@ -100,33 +98,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // Coin flip — wait for images, then animate
   var coin = document.querySelector(".coin");
   if (coin) {
-    var imgs = coin.querySelectorAll("img");
-    var loaded = 0;
-    var total = imgs.length;
+    var frontImg = coin.querySelector(".coin__front img");
 
-    function onImgReady() {
-      loaded++;
-      if (loaded >= total) {
-        // Remove loading state so browser paints both faces
-        coin.classList.remove("coin--loading");
-        // Wait two frames for the browser to render/composite both faces
-        // before starting the spin animation
+    function startCoin() {
+      coin.classList.remove("coin--loading");
+      requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            coin.classList.add("coin--entry");
-          });
+          coin.classList.add("coin--entry");
         });
-      }
+      });
     }
 
-    imgs.forEach(function (img) {
-      if (img.complete) {
-        onImgReady();
-      } else {
-        img.addEventListener("load", onImgReady);
-        img.addEventListener("error", onImgReady);
-      }
-    });
+    if (frontImg && frontImg.complete) {
+      frontImg.decode ? frontImg.decode().then(startCoin).catch(startCoin) : startCoin();
+    } else if (frontImg) {
+      frontImg.addEventListener("load", function () {
+        frontImg.decode ? frontImg.decode().then(startCoin).catch(startCoin) : startCoin();
+      });
+      frontImg.addEventListener("error", startCoin);
+    } else {
+      startCoin();
+    }
 
     coin.addEventListener("animationend", function () {
       coin.classList.remove("coin--entry", "coin--spinning");
