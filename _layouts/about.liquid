@@ -107,8 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function onImgReady() {
       loaded++;
       if (loaded >= total) {
+        // 1) Fade in first (0.3s transition)
         coin.classList.remove("coin--loading");
-        coin.classList.add("coin--entry");
+        // 2) Spin after fade-in completes
+        coin.addEventListener("transitionend", function () {
+          coin.classList.add("coin--entry");
+        }, { once: true });
       }
     }
 
