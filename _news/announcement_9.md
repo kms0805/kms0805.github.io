@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Two papers accepted to **ACL 2026**: LLM training data and multimodal unlearning (Findings).
+Two papers accepted to **ACL 2026**: [LLM training data](https://arxiv.org/abs/2510.02370) and [multimodal unlearning](https://arxiv.org/abs/2506.02541) (Findings).
