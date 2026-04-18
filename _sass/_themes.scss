@@ -11,6 +11,8 @@
   --global-text-color-light: #5a7a90;
   // 테마: 돌고래 등 — 생생한 오션블루
   --global-theme-color: #{$cyan-color};
+  --global-theme-color-deep: #1e5a78; // 깊은 바다 — 네이비 (heading, author name)
+  --global-theme-color-accent: #6dc0d8; // 물보라 — 스프레이 아쿠아 (background accent, badge)
   --global-hover-color: #{$blue-color};
   --global-hover-text-color: #{$white-color};
   // 푸터: 수면 — 밝은 블루그레이
