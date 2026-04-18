@@ -57,9 +57,10 @@ al-folio Jekyll 테마 기반 학술 홈페이지. GitHub Pages로 자동 배포
 - 각 항목에 `logo` 필드로 기관 로고 지정 가능 (assets/img/에 저장)
 
 ## Design Rules
-- Primary color: #2698ba (sky blue)
-- 프로필 이미지: 현재 사각형 (image_circular: false)
-- Font: Arial, sans-serif (소개문 제목)
+- Primary color: #3d8eb0 (Vivid Dolphin ocean blue, `$cyan-color` in `_sass/_variables.scss`)
+- Palette: Vivid Dolphin — surface #52a8cc, deep navy #1e5a78, spray aqua #6dc0d8
+- 프로필 이미지: coin flip (앞면 프로필 사진, 뒷면 MIL 로고, `_pages/about.md`에서 `image_circular: true`)
+- Font: Source Sans 3 (body + headings)
 
 ## Deployment
 - master branch push → GitHub Actions 자동 배포
