@@ -63,8 +63,16 @@ code, pre, .highlight {
   font-weight: 700;
   letter-spacing: -0.3px;
   line-height: 1.2;
-  color: var(--global-text-color);
+  color: var(--global-theme-color-deep);
   margin-bottom: 0.3rem;
+}
+
+.about-hero .desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--global-text-color-light);
+  margin: 0.2rem 0 0.5rem;
+  letter-spacing: 0.1px;
 }
 
 .about-social {
@@ -107,6 +115,11 @@ code, pre, .highlight {
   line-height: 1.7;
   color: var(--global-text-color-light);
 
+  strong {
+    color: var(--global-theme-color-deep);
+    font-weight: 600;
+  }
+
   a {
     color: var(--global-theme-color);
     text-decoration: none;
@@ -114,11 +127,17 @@ code, pre, .highlight {
   }
 }
 
-// Section divider
+// Section divider — subtle dolphin aqua fade
 .section-wave {
   height: 1px;
   margin: 1rem 0;
-  background: var(--global-divider-color);
+  background: linear-gradient(
+    to right,
+    var(--global-theme-color-accent) 0%,
+    var(--global-divider-color) 25%,
+    var(--global-divider-color) 100%
+  );
+  opacity: 0.7;
 }
 
 // Section headings — simple & casual

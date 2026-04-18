@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle:
+subtitle: Ph.D. Student · Machine Intelligence Lab, SNU
 
 profile:
   align: left
