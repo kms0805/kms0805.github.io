@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="post">
   <header class="post-header">
-    <!-- Hero: Name + Profile side by side -->
+    <!-- Hero: Portrait + Name/Subtitle/Social -->
     <div class="about-hero">
       {% if page.profile %}
         <div class="about-hero__photo">
@@ -11,16 +11,11 @@ layout: default
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% assign profile_image_class = 'img-fluid about-avatar' %}
             {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            <div class="coin coin--loading">
-              <div class="coin__front">
-                {%
-                  include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-                  cache_bust=true
-                %}
-              </div>
-              <div class="coin__back">
-                <img src="{{ '/assets/img/logo/mil_logo.png' | relative_url }}" alt="MIL" class="coin__back-logo">
-              </div>
+            <div class="portrait">
+              {%
+                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                cache_bust=true
+              %}
             </div>
           {% endif %}
         </div>
@@ -34,12 +29,14 @@ layout: default
             {{ site.title }}
           {% endif %}
         </h1>
+        {% if page.subtitle %}
+          <p class="desc">{{ page.subtitle }}</p>
+        {% endif %}
         {% if page.social %}
           <div class="about-social">
             <div class="contact-icons">{% include social.liquid %}</div>
           </div>
         {% endif %}
-        <p class="desc">{{ page.subtitle }}</p>
       </div>
     </div>
   </header>
@@ -97,44 +94,6 @@ layout: default
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // Coin flip — wait for images, then animate
-  var coin = document.querySelector(".coin");
-  if (coin) {
-    var imgs = coin.querySelectorAll("img");
-    var loaded = 0;
-    var total = imgs.length;
-
-    function onImgReady() {
-      loaded++;
-      if (loaded >= total) {
-        // 1) Fade in first (0.3s transition)
-        coin.classList.remove("coin--loading");
-        // 2) Spin after fade-in completes
-        coin.addEventListener("transitionend", function () {
-          coin.classList.add("coin--entry");
-        }, { once: true });
-      }
-    }
-
-    imgs.forEach(function (img) {
-      if (img.complete) {
-        onImgReady();
-      } else {
-        img.addEventListener("load", onImgReady);
-        img.addEventListener("error", onImgReady);
-      }
-    });
-
-    coin.addEventListener("animationend", function () {
-      coin.classList.remove("coin--entry", "coin--spinning");
-    });
-    coin.addEventListener("mouseenter", function () {
-      if (!coin.classList.contains("coin--entry") && !coin.classList.contains("coin--spinning")) {
-        coin.classList.add("coin--spinning");
-      }
-    });
-  }
-
   var reveals = document.querySelectorAll(".reveal");
   if (!reveals.length) return;
 

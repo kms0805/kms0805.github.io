@@ -10,8 +10,8 @@
                 include figure.liquid
                 loading="eager"
                 path=entry_path
-                width="48"
-                height="48"
+                width="36"
+                height="36"
                 class="cv-logo-img"
                 zoomable=false
                 alt=content.logo
@@ -19,21 +19,18 @@
             </div>
           {% endif %}
           <div class="cv-item__body">
-            {% if content.title %}
-              <div class="cv-item__title">{{ content.title }}</div>
-            {% endif %}
+            <div class="cv-item__title">
+              {{ content.title }}{% if content.department %}<span class="cv-item__detail"> · {{ content.department }}</span>{% endif %}
+            </div>
             {% if content.institution %}
               <div class="cv-item__sub">
                 {% if content.url %}<a href="{{ content.url }}" target="_blank">{{ content.institution }}</a>{% else %}{{ content.institution }}{% endif %}
               </div>
             {% endif %}
-            {% if content.department %}
-              <div class="cv-item__detail">{{ content.department }}</div>
-            {% endif %}
-            {% if content.maindescription %}
-              <div class="cv-item__date">{{ content.maindescription }}</div>
-            {% endif %}
           </div>
+          {% if content.maindescription %}
+            <div class="cv-item__date">{{ content.maindescription }}</div>
+          {% endif %}
         </div>
       {% endfor %}
     {% endif %}
