@@ -18,4 +18,4 @@ social: true # includes social icons at the bottom of the page
 
 Hi! I am a Ph.D. student at the [Machine Intelligence Lab](http://milab.snu.ac.kr) at Seoul National University, advised by Prof. [Kyomin Jung](http://milab.snu.ac.kr/kjung/index.html).
 
-My research is driven by the goal of building **faithful and trustworthy AI**. I explore how language models acquire, store, and utilize knowledge — and investigate methods to ensure their behavior aligns with our intentions. Recently, I am particularly interested in making **agentic AI system** behavior easier to **observe** and **control** for humans.
+I am broadly interested in **language models** — how they work, what they know, and how we can make them more faithful and trustworthy. My research spans topics such as **Knowledge Acquisition and Utilization**, **Reasoning**, and understanding how models store and apply information internally. Recently, I am particularly interested in making **agentic AI systems** easier to **observe** and **control** for humans.
