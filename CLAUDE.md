@@ -59,8 +59,9 @@ al-folio Jekyll 테마 기반 학술 홈페이지. GitHub Pages로 자동 배포
 ## Design Rules
 - Primary color: #3d8eb0 (Vivid Dolphin ocean blue, `$cyan-color` in `_sass/_variables.scss`)
 - Palette: Vivid Dolphin — surface #52a8cc, deep navy #1e5a78, spray aqua #6dc0d8
-- 프로필 이미지: coin flip (앞면 프로필 사진, 뒷면 MIL 로고, `_pages/about.md`에서 `image_circular: true`)
+- 프로필 이미지: 원형 (`_pages/about.md`에서 `image_circular: true`)
 - Font: Source Sans 3 (body + headings)
+- **라이트 모드 전용** — 다크 모드는 의도적으로 사용하지 않음. `_config.yml`의 `enable_darkmode: false`를 켜지 말 것 (테마 토글 아이콘이 쓰던 tabler-icons 폰트는 삭제됨)
 
 ## Deployment
 - master branch push → GitHub Actions 자동 배포
