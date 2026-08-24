@@ -87,6 +87,15 @@ layout: default
           <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
         </h2>
         {% include selected_papers.liquid %}
+        <p class="section-more">
+          For more of my work, see the
+          <a href="{{ '/publications/' | relative_url }}">full publication list</a>
+          {% if site.scholar_userid %}
+            or my
+            <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          {% endif %}
+          profile.
+        </p>
       </section>
     {% endif %}
   </article>
