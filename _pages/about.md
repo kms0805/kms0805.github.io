@@ -17,4 +17,4 @@ social: true # includes social icons at the bottom of the page
 
 Hi! I am a Ph.D. student at the [Machine Intelligence Lab](http://milab.snu.ac.kr) at Seoul National University, advised by Prof. [Kyomin Jung](http://milab.snu.ac.kr/kjung/index.html).
 
-I study what language models know and how they use it: **editing and erasing knowledge** so a model truly forgets rather than hides, and **how models choose between memorized and in-context knowledge**. Recently, I am interested in making **agentic AI systems** easier to **observe** and **control**.
+I study how language models can best use **what they know** and **the information they are given**. I have also worked on **editing and erasing knowledge** in language models — making a model truly forget a fact rather than merely hide it.
