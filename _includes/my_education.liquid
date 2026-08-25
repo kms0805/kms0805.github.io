@@ -1,6 +1,6 @@
 <div class="cv-section">
   {% for entry in site.data.cv %}
-    {% if entry.title == "Education" %}
+    {% if entry.title == 'Education' %}
       {% for content in entry.contents %}
         <div class="cv-item">
           {% if content.logo %}
@@ -20,11 +20,18 @@
           {% endif %}
           <div class="cv-item__body">
             <div class="cv-item__title">
-              {{ content.title }}{% if content.department %}<span class="cv-item__detail"> · {{ content.department }}</span>{% endif %}
+              {{ content.title -}}
+              {%- if content.department -%}
+                <span class="cv-item__detail"> · {{ content.department }}</span>
+              {%- endif %}
             </div>
             {% if content.institution %}
               <div class="cv-item__sub">
-                {% if content.url %}<a href="{{ content.url }}" target="_blank">{{ content.institution }}</a>{% else %}{{ content.institution }}{% endif %}
+                {% if content.url -%}
+                  <a href="{{ content.url }}" target="_blank">{{ content.institution }}</a>
+                {%- else -%}
+                  {{- content.institution -}}
+                {%- endif %}
               </div>
             {% endif %}
           </div>

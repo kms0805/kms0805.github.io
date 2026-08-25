@@ -1,6 +1,6 @@
 <div class="cv-section">
   {% for entry in site.data.cv %}
-    {% if entry.title == "Experience" %}
+    {% if entry.title == 'Experience' %}
       {% for content in entry.contents %}
         <div class="cv-item">
           {% if content.logo %}
@@ -20,11 +20,25 @@
           {% endif %}
           <div class="cv-item__body">
             <div class="cv-item__title">
-              {{ content.title }}{% if content.Host %}<span class="cv-item__detail"> · Host: {% if content.Host.url %}<a href="{{ content.Host.url }}" target="_blank">{{ content.Host.name }}</a>{% else %}{{ content.Host.name }}{% endif %}</span>{% endif %}
+              {{ content.title -}}
+              {%- if content.Host -%}
+                <span class="cv-item__detail">
+                  · Host:
+                  {% if content.Host.url -%}
+                    <a href="{{ content.Host.url }}" target="_blank">{{ content.Host.name }}</a>
+                  {%- else -%}
+                    {{- content.Host.name -}}
+                  {%- endif -%}
+                </span>
+              {%- endif %}
             </div>
             {% if content.institution %}
               <div class="cv-item__sub">
-                {% if content.url %}<a href="{{ content.url }}" target="_blank">{{ content.institution }}</a>{% else %}{{ content.institution }}{% endif %}
+                {% if content.url -%}
+                  <a href="{{ content.url }}" target="_blank">{{ content.institution }}</a>
+                {%- else -%}
+                  {{- content.institution -}}
+                {%- endif %}
               </div>
             {% endif %}
           </div>

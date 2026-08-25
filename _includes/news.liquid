@@ -10,7 +10,13 @@
       {% for item in news limit: news_limit %}
         <div class="news-card">
           <span class="news-card__date">{{ item.date | date: '%b %d, %Y' }}</span>
-          <span class="news-card__body">{% if item.inline %}{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}{% else %}<a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}</span>
+          <span class="news-card__body">
+            {%- if item.inline -%}
+              {{- item.content | remove: '<p>' | remove: '</p>' | emojify -}}
+            {%- else -%}
+              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {%- endif -%}
+          </span>
         </div>
       {% endfor %}
     </div>

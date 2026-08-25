@@ -4,10 +4,12 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Minsung
-middle_name: 
+middle_name:
 last_name: Kim
 email: kms0805@snu.ac.kr
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
+# ">-" folds newlines AND strips the trailing one. A trailing newline ends up
+# inside the schema.org JSON-LD string and makes it invalid JSON.
+description: >-
   Academic homepage of Minsung Kim, Ph.D. student at Seoul National University working on faithful and trustworthy AI.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
@@ -29,7 +31,7 @@ impressum_path: # set to path to include impressum link in the footer, use the s
 repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_trophies:
-  enabled: false 
+  enabled: false
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
@@ -104,7 +106,6 @@ zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
 contact_note: >
-  
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -311,7 +312,7 @@ more_authors_animation_delay: 10 # more authors are revealed on click using anim
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
 enable_publication_thumbnails: true
-publication_thumbnail_size: 400 
+publication_thumbnail_size: 400
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes

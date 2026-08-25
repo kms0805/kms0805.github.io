@@ -21,13 +21,13 @@ npx prettier . --check     # --write to fix
 
 ## Where content lives
 
-| Path | Contents |
-| --- | --- |
-| `_pages/about.md` | Front page: profile, bio |
-| `_bibliography/papers.bib` | Publications (`selected={true}` surfaces a paper on the front page) |
-| `_news/announcement_N.md` | News items |
-| `_data/cv.yml` | Education and experience |
-| `_sass/`, `_layouts/`, `_includes/` | Styling and templates |
+| Path                                | Contents                                                            |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| `_pages/about.md`                   | Front page: profile, bio                                            |
+| `_bibliography/papers.bib`          | Publications (`selected={true}` surfaces a paper on the front page) |
+| `_news/announcement_N.md`           | News items                                                          |
+| `_data/cv.yml`                      | Education and experience                                            |
+| `_sass/`, `_layouts/`, `_includes/` | Styling and templates                                               |
 
 See [CLAUDE.md](CLAUDE.md) for the conventions these files follow.
 

@@ -33,45 +33,53 @@ SNU ECE PhD student 학술 홈페이지(al-folio 기반)를 Claude Code 워크�
   - CV: cv.yml 섹션 구조 (Education, Experience 등)
 - **디자인 규칙**: 색상 스킴 (#2698ba sky blue), 폰트, 레이아웃 규칙
 - **배포**: master push → GitHub Actions 자동 배포
-- **주의사항**: _includes/, _layouts/ 수정 시 주의, bib 포맷 검증
+- **주의사항**: \_includes/, \_layouts/ 수정 시 주의, bib 포맷 검증
 
 ## Part 2: Custom Skills (슬래시 커맨드)
 
 `.claude/commands/` 디렉토리에 저장.
 
 ### /add-paper
+
 - **입력**: arXiv ID 또는 논문 정보
 - **동작**: arXiv에서 메타데이터 fetch → BibTeX 생성 → papers.bib에 추가
 - **확인**: selected 여부, 저널/학회 정보
 
 ### /add-news
+
 - **입력**: 뉴스 내용
 - **동작**: 다음 번호의 announcement 파일 생성, 날짜 자동 설정
 
 ### /update-cv
+
 - **입력**: 없음 (대화형)
 - **동작**: 현재 CV 보여주고 어떤 섹션을 수정할지 대화로 안내
 
 ### /deploy-check
+
 - **입력**: 없음
 - **동작**: `bundle exec jekyll build` 로컬 빌드 테스트, 에러 리포트
 
 ### /design-improve
+
 - **입력**: 페이지 이름 (about, publications, cv 등)
 - **동작**: 해당 페이지 분석 후 구체적 개선안 제시, 승인 시 적용
 
 ## Part 3: 디자인 개선 로드맵
 
 ### Phase 1 (우선순위 높음)
+
 1. About 페이지 소개문 보강 — 연구 관심사, 키워드, 최근 성과 추가
 2. 프로필 이미지 — 원형 여부 선택
 
 ### Phase 2 (우선순위 중간)
+
 3. About 페이지 구조화 — Research Interests 섹션 분리
 4. CV Hobby 섹션 정리 또는 제거
 5. News 섹션 타임라인 개선
 
 ### Phase 3 (우선순위 낮음)
+
 6. Projects 페이지 추가
 7. 다크모드 토글 활성화
 8. SEO (Open Graph 메타 태그) 활성화

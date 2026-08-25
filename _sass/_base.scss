@@ -9,13 +9,34 @@ html {
 // Typography — clean sans-serif
 
 body,
-p, span, div, li, td, th, a, label, input, textarea, blockquote,
-h1, h2, h3, h4, h5, h6,
-.post-title, .navbar-brand {
-  font-family: "Source Sans 3", -apple-system, sans-serif !important;
+p,
+span,
+div,
+li,
+td,
+th,
+a,
+label,
+input,
+textarea,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.navbar-brand {
+  font-family:
+    "Source Sans 3",
+    -apple-system,
+    sans-serif !important;
 }
 
-code, pre, .highlight {
+code,
+pre,
+.highlight {
   font-family: monospace !important;
 }
 
@@ -23,7 +44,9 @@ code, pre, .highlight {
 .reveal.reveal-ready {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 .reveal.reveal-ready.visible {
   opacity: 1;
@@ -122,7 +145,9 @@ code, pre, .highlight {
   a {
     color: var(--global-theme-color);
     text-decoration: none;
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -130,12 +155,7 @@ code, pre, .highlight {
 .section-wave {
   height: 1px;
   margin: 1rem 0;
-  background: linear-gradient(
-    to right,
-    var(--global-theme-color-accent) 0%,
-    var(--global-divider-color) 25%,
-    var(--global-divider-color) 100%
-  );
+  background: linear-gradient(to right, var(--global-theme-color-accent) 0%, var(--global-divider-color) 25%, var(--global-divider-color) 100%);
   opacity: 0.7;
 }
 
@@ -150,12 +170,16 @@ code, pre, .highlight {
   padding: 0;
   border: none;
 
-  .section-icon { display: none; }
+  .section-icon {
+    display: none;
+  }
 
   a {
     color: inherit;
     text-decoration: none;
-    &:hover { color: var(--global-theme-color); }
+    &:hover {
+      color: var(--global-theme-color);
+    }
   }
 }
 
@@ -172,10 +196,11 @@ code, pre, .highlight {
   a {
     color: var(--global-theme-color);
     text-decoration: none;
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
-
 
 // Responsive
 @media (max-width: 768px) {
@@ -184,9 +209,15 @@ code, pre, .highlight {
     text-align: center;
     gap: 1rem;
   }
-  .about-name { font-size: 1.6rem; }
-  .about-social .contact-icons { justify-content: center; }
-  .about-bio { text-align: left; }
+  .about-name {
+    font-size: 1.6rem;
+  }
+  .about-social .contact-icons {
+    justify-content: center;
+  }
+  .about-bio {
+    text-align: left;
+  }
 }
 
 p,
@@ -624,7 +655,7 @@ ul.task-list input[type="checkbox"] {
     gap: 14px;
     align-items: center;
     padding: 9px 0;
-    border-bottom: 1px solid rgba(61, 142, 176, 0.10);
+    border-bottom: 1px solid rgba(61, 142, 176, 0.1);
 
     &:last-child {
       border-bottom: none;
@@ -680,7 +711,10 @@ ul.task-list input[type="checkbox"] {
     a {
       color: inherit;
       text-decoration: none;
-      &:hover { color: var(--global-theme-color); text-decoration: underline; }
+      &:hover {
+        color: var(--global-theme-color);
+        text-decoration: underline;
+      }
     }
   }
 
@@ -693,7 +727,9 @@ ul.task-list input[type="checkbox"] {
     a {
       color: inherit;
       text-decoration: none;
-      &:hover { text-decoration: underline; }
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -1118,7 +1154,9 @@ footer.sticky-bottom {
           color: var(--global-text-color);
           text-decoration: none;
           border-bottom: 1px solid transparent;
-          transition: color 0.15s ease, border-color 0.15s ease;
+          transition:
+            color 0.15s ease,
+            border-color 0.15s ease;
 
           &:hover {
             color: var(--global-theme-color);
@@ -1217,13 +1255,21 @@ footer.sticky-bottom {
 
       &:hover .dolphin-ripple:not(.dolphin-ripple--2) {
         animation: ripple-fade 0.35s ease-out forwards;
-        &::before { animation: ripple-spread 0.35s ease-out forwards; }
-        &::after  { animation: ripple-spread 0.35s ease-out 0.08s forwards; }
+        &::before {
+          animation: ripple-spread 0.35s ease-out forwards;
+        }
+        &::after {
+          animation: ripple-spread 0.35s ease-out 0.08s forwards;
+        }
       }
       &:hover .dolphin-ripple--2 {
         animation: ripple-fade 0.4s ease-out 0.6s forwards;
-        &::before { animation: ripple-spread 0.4s ease-out 0.6s forwards; }
-        &::after  { animation: ripple-spread 0.4s ease-out 0.68s forwards; }
+        &::before {
+          animation: ripple-spread 0.4s ease-out 0.6s forwards;
+        }
+        &::after {
+          animation: ripple-spread 0.4s ease-out 0.68s forwards;
+        }
       }
 
       .badges {
@@ -1647,20 +1693,47 @@ swiper-container {
 // ─── Dolphin hover keyframes (publication entries) ───────────────────────────
 
 @keyframes dolphin-jump {
-  0%   { opacity: 0;    transform: translate(-28px,  6px)  rotate(-12deg); }
-  18%  { opacity: 0.55; transform: translate(-26px, -8px)  rotate(-8deg); }
-  50%  { opacity: 0.7;  transform: translate(-14px, -13px) rotate(8deg); }
-  82%  { opacity: 0.55; transform: translate(-2px,  -6px)  rotate(28deg); }
-  100% { opacity: 0;    transform: translate(4px,   8px)   rotate(45deg); }
+  0% {
+    opacity: 0;
+    transform: translate(-28px, 6px) rotate(-12deg);
+  }
+  18% {
+    opacity: 0.55;
+    transform: translate(-26px, -8px) rotate(-8deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-14px, -13px) rotate(8deg);
+  }
+  82% {
+    opacity: 0.55;
+    transform: translate(-2px, -6px) rotate(28deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(4px, 8px) rotate(45deg);
+  }
 }
 
 @keyframes ripple-fade {
-  0%   { opacity: 0; }
-  25%  { opacity: 0.45; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes ripple-spread {
-  0%   { width: 3px;  opacity: 0.6; }
-  100% { width: 18px; opacity: 0; }
+  0% {
+    width: 3px;
+    opacity: 0.6;
+  }
+  100% {
+    width: 18px;
+    opacity: 0;
+  }
 }
