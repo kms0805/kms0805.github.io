@@ -6,37 +6,18 @@ on:
       - master
       - main
     paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
       - "**/*.md"
-      - "**.yml"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
+      - "**.html"
+      - "**.liquid"
   pull_request:
     branches:
       - master
       - main
     paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
       - "**/*.md"
-      - "**.yml"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
+      - "**.html"
+      - "**.liquid"
+  workflow_dispatch:
 
 jobs:
   link-checker:
@@ -48,5 +29,12 @@ jobs:
         uses: lycheeverse/lychee-action@v1.9.0
         with:
           fail: true
-          # removed md files that include liquid tags
-          args: --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --verbose --no-progress './**/*.md' './**/*.html'
+          # _pages/404.md contains Liquid tags that lychee cannot resolve.
+          # milab.snu.ac.kr resolves in a browser but resets the connection for
+          # CI runners, so it is checked by hand rather than reported as broken.
+          args: >-
+            --exclude-path _pages/404.md
+            --exclude '^https?://milab\.snu\.ac\.kr'
+            --exclude-loopback
+            --verbose --no-progress
+            './**/*.md' './**/*.html'

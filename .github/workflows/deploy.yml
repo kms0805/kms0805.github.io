@@ -1,58 +1,51 @@
 name: Deploy site
 
 on:
+  # Deploy on any change EXCEPT the files below. An allow-list was used here
+  # before and silently skipped deploys whenever a new source directory
+  # appeared (it happened with _sass and again with _bibliography), so the
+  # filter is inverted: anything that is not listed here rebuilds the site.
   push:
     branches:
       - master
       - main
-    paths:
-      - "_bibliography/**"
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "**.scss"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    paths-ignore:
+      - ".claude/**"
+      - ".github/workflows/broken-links.yml"
+      - ".github/workflows/broken-links-site.yml"
+      - ".github/workflows/prettier.yml"
+      - ".github/workflows/prettier-comment-on-pr.yml"
+      - ".git-blame-ignore-revs"
+      - ".pre-commit-config.yaml"
+      - ".prettierignore"
+      - ".prettierrc"
+      - "CLAUDE.md"
+      - "LICENSE"
+      - "README.md"
+      - "docs/**"
+      - "package.json"
+      - "package-lock.json"
   pull_request:
     branches:
       - master
       - main
-    paths:
-      - "_bibliography/**"
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "**.scss"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    # Keep in sync with the push filter above (Actions does not support YAML anchors).
+    paths-ignore:
+      - ".claude/**"
+      - ".github/workflows/broken-links.yml"
+      - ".github/workflows/broken-links-site.yml"
+      - ".github/workflows/prettier.yml"
+      - ".github/workflows/prettier-comment-on-pr.yml"
+      - ".git-blame-ignore-revs"
+      - ".pre-commit-config.yaml"
+      - ".prettierignore"
+      - ".prettierrc"
+      - "CLAUDE.md"
+      - "LICENSE"
+      - "README.md"
+      - "docs/**"
+      - "package.json"
+      - "package-lock.json"
   workflow_dispatch:
 
 permissions:
