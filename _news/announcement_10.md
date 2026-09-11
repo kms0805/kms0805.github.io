@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our PRAGMA paper is accepted to **EMNLP 2026**!
+Our [PRAGMA](https://arxiv.org/abs/2609.09664) paper is accepted to **EMNLP 2026**!
